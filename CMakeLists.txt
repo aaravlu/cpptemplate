@@ -11,10 +11,13 @@ set(CMAKE_LINKER "C:/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/link.e
 
 add_compile_options($<$<CONFIG:Debug>:/MP>)
 
-add_compile_options($<$<CONFIG:Release>:/O2>)
-add_compile_options($<$<CONFIG:Release>:/Ot>)
-add_compile_options($<$<CONFIG:Release>:/GL>)
-add_compile_options($<$<CONFIG:Release>:/arch:AVX2>)
-add_compile_options($<$<CONFIG:Release>:/fp:fast>)
+add_compile_options($<$<CONFIG:Release>:/O2>) # 最大化速度
+add_compile_options($<$<CONFIG:Release>:/Os>)  # 优化大小
+add_compile_options($<$<CONFIG:Release>:/Gy>)  # 函数级链接
+add_compile_options($<$<CONFIG:Release>:/Gw>)  # 全局数据优化
+add_compile_options($<$<CONFIG:Release>:/Oi>)  # 内联函数扩展
+add_compile_options($<$<CONFIG:Release>:/GR->) # 禁用 RTTI
+add_compile_options($<$<CONFIG:Release>:/GS->) # 禁用缓冲区检查
+add_compile_options($<$<CONFIG:Release>:/GL>)  # 全程序优化
 
 add_executable(cpptemplate src/main.cpp)
