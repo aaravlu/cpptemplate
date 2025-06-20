@@ -5,7 +5,6 @@ Project(cpptemplate)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-set(CMAKE_C_COMPILER "C:/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/cl.exe")
 set(CMAKE_CXX_COMPILER "C:/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/cl.exe")
 set(CMAKE_LINKER "C:/BuildTools/VC/Tools/MSVC/14.29.30133/bin/Hostx64/x64/link.exe")
 
