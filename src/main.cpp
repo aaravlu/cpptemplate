@@ -5,19 +5,16 @@
 #include <string>
 #include <string_view>
 
-// 使用 C++20 的特性实现 minigrep
 class Minigrep {
   private:
-    std::string pattern_;    // 搜索模式
-    bool case_sensitive_;    // 是否区分大小写
-    bool show_line_numbers_; // 是否显示行号
+    std::string pattern_;
+    bool case_sensitive_;
+    bool show_line_numbers_;
 
-    // 检查字符串是否包含模式（区分或不区分大小写）
     bool contains_pattern(std::string_view line, std::string_view pattern) const {
         if (case_sensitive_) {
             return line.find(pattern) != std::string_view::npos;
         }
-        // C++20 std::ranges 转换小写
         auto to_lower = [](char c) { return std::tolower(c); };
         std::string line_lower, pattern_lower;
         std::ranges::transform(line, std::back_inserter(line_lower), to_lower);
@@ -54,7 +51,6 @@ class Minigrep {
         }
     }
 
-    // 搜索目录中的所有文件
     void search_directory(const std::filesystem::path &dir_path) const {
         try {
             for (const auto &entry : std::filesystem::recursive_directory_iterator(dir_path)) {
@@ -68,7 +64,6 @@ class Minigrep {
     }
 };
 
-// 使用说明
 void print_usage(const char *program_name) {
     std::cerr << "Usage: " << program_name << " <pattern> <path> [-i] [-n]\n"
               << "  -i: case-insensitive search\n"
@@ -86,7 +81,6 @@ int main(int argc, char *argv[]) {
     bool case_sensitive = true;
     bool show_line_numbers = false;
 
-    // 解析命令行参数
     for (int i = 3; i < argc; ++i) {
         std::string_view arg = argv[i];
         if (arg == "-i") {
@@ -101,7 +95,6 @@ int main(int argc, char *argv[]) {
 
     Minigrep grep(pattern, case_sensitive, show_line_numbers);
 
-    // 根据路径类型执行搜索
     try {
         if (std::filesystem::is_directory(path)) {
             grep.search_directory(path);
