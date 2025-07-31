@@ -28,7 +28,6 @@ class Minigrep {
           show_line_numbers_(show_line_numbers) {
     }
 
-    // 搜索单个文件
     void search_file(const std::filesystem::path &file_path) const {
         std::ifstream file(file_path);
         if (!file.is_open()) {
