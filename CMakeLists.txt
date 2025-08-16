@@ -24,6 +24,7 @@ add_compile_options(
     $<$<CONFIG:Release>:/Gw>
     $<$<CONFIG:Release>:/fp:fast>
     $<$<CONFIG:Release>:/arch:AVX2>
+    $<$<CONFIG:Release>:/EHsc->
     $<$<CONFIG:Release>:/GR->
     $<$<CONFIG:Release>:/GS->
 )
