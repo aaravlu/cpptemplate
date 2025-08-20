@@ -31,7 +31,6 @@ add_compile_options(
 # /OPT:REF /OPT:ICF /LTCG /MERGE:_RDATA=.rdata
 add_link_options(
     $<$<CONFIG:Release>:/LTCG>
-    $<$<CONFIG:Release>:/LTCG>
     $<$<CONFIG:Release>:/MANIFEST:NO>
     $<$<CONFIG:Release>:/MERGE:_RDATA=.rdata>
     $<$<CONFIG:Release>:/OPT:REF>
