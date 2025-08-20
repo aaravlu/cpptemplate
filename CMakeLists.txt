@@ -7,16 +7,15 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # /MDd /MP /Zi /arch:AVX2
 add_compile_options(
+    $<$<CONFIG:Debug>:/arch:AVX2>
     $<$<CONFIG:Debug>:/MDd>
     $<$<CONFIG:Debug>:/MP>
     $<$<CONFIG:Debug>:/Zi>
-    $<$<CONFIG:Debug>:/arch:AVX2>
 )
 
-# /MD /MP /Oi /O2 /Gy /GL /Gw /fp:fast /arch:AVX2 /GR- /GS- /EHsc-
+# /MD /MP /Oi /O2 /Gy /GL /Gw /fp:fast /arch:AVX2 /GR- /GS-
 add_compile_options(
     $<$<CONFIG:Release>:/arch:AVX2>
-    $<$<CONFIG:Release>:/EHsc->
     $<$<CONFIG:Release>:/fp:fast>
     $<$<CONFIG:Release>:/Gy>
     $<$<CONFIG:Release>:/GL>
