@@ -27,18 +27,14 @@ if(MSVC)
         $<$<CONFIG:Release>:/GS->
     )
 
-    # /DLL
     # /OPT:REF /OPT:ICF /LTCG /MERGE:_RDATA=.rdata
     add_link_options(
-        $<$<CONFIG:Debug>:/DLL>
-
-        $<$<CONFIG:Release>:/DLL>
         $<$<CONFIG:Release>:/LTCG>
         $<$<CONFIG:Release>:/MANIFEST:NO>
         $<$<CONFIG:Release>:/MERGE:_RDATA=.rdata>
         $<$<CONFIG:Release>:/OPT:REF>
         $<$<CONFIG:Release>:/OPT:ICF>
     )
-
-    add_executable(cpptemplate src/main.cpp)
 endif(MSVC)
+
+add_executable(test "${CMAKE_CURRENT_LIST_DIR}/src/main.cpp")
