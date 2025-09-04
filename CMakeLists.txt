@@ -27,7 +27,7 @@ if(MSVC)
         $<$<CONFIG:Release>:/GS->
     )
 
-    # /OPT:REF /OPT:ICF /LTCG /MERGE:_RDATA=.rdata
+    # /LTCG /MANIFEST:NO /MERGE:_RDATA=.rdata /OPT:REF /OPT:ICF
     add_link_options(
         $<$<CONFIG:Release>:/LTCG>
         $<$<CONFIG:Release>:/MANIFEST:NO>
