@@ -7,7 +7,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 if(MSVC)
     # /arch:AVX2 /MDd /MP /Zi
-    # /arch:AVX2 /MD /MP /Oi /O2 /Gy /GL /Gw /fp:fast /GR- /GS-
+    # /arch:AVX2 /MD /MP /Oi /Os /Gy /GL /Gw /fp:fast /GR- /GS-
     add_compile_options(
         $<$<CONFIG:Debug>:/arch:AVX2>
         $<$<CONFIG:Debug>:/MDd>
@@ -22,7 +22,7 @@ if(MSVC)
         $<$<CONFIG:Release>:/MD>
         $<$<CONFIG:Release>:/MP>
         $<$<CONFIG:Release>:/Oi>
-        $<$<CONFIG:Release>:/O2>
+        $<$<CONFIG:Release>:/Os>
         $<$<CONFIG:Release>:/GR->
         $<$<CONFIG:Release>:/GS->
     )
