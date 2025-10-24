@@ -37,4 +37,4 @@ if(MSVC)
     )
 endif(MSVC)
 
-add_executable(test "${CMAKE_CURRENT_LIST_DIR}/src/main.cpp")
+add_executable(cpptemplate "${CMAKE_CURRENT_LIST_DIR}/src/main.cpp")
