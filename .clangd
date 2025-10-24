@@ -1,8 +1,4 @@
 CompileFlags:
   Add: [
-    "-std=c++20",
-    "-isystem", "C:/BuildTools/VC/Tools/MSVC/14.29.30133/include",
-    "-isystem", "C:/BuildTools/Windows Kits/10/Include/10.0.20348.0/ucrt",
-    "-isystem", "C:/BuildTools/Windows Kits/10/Include/10.0.20348.0/um",
-    "-isystem", "C:/BuildTools/Windows Kits/10/Include/10.0.20348.0/shared"
+    "-std=c++20"
   ]
