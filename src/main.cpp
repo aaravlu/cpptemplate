@@ -69,10 +69,10 @@ void print_usage(const char *program_name) {
               << "  -n: show line numbers\n";
 }
 
-int main(int argc, char *argv[]) {
+void main(int argc, char *argv[]) {
     if (argc < 3) {
         print_usage(argv[0]);
-        return 1;
+        return;
     }
 
     std::string pattern = argv[1];
@@ -88,7 +88,7 @@ int main(int argc, char *argv[]) {
             show_line_numbers = true;
         } else {
             print_usage(argv[0]);
-            return 1;
+            return;
         }
     }
 
@@ -102,8 +102,6 @@ int main(int argc, char *argv[]) {
         }
     } catch (const std::exception &e) {
         std::cerr << "Error: " << e.what() << '\n';
-        return 1;
     }
 
-    return 0;
 }

@@ -2,3 +2,7 @@ CompileFlags:
   Add: [
     "-std=c++20"
   ]
+
+Diagnostics:
+  Suppress:
+    - main_returns_nonint
